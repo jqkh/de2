@@ -445,7 +445,7 @@ NiosSoc u0 (
         /* LEDG */
         .led_export        ({oLEDR,oLEDG}),             //         led.export
 		  /*Buttom*/
-		  .buttom_export(iKEY)
+		  .buttom_export(iKEY[3:0])
     );
 
 

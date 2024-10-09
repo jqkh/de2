@@ -145,22 +145,6 @@
          type = "String";
       }
    }
-   element sdram_ctrl.s1
-   {
-      datum baseAddress
-      {
-         value = "33554432";
-         type = "String";
-      }
-   }
-   element led.s1
-   {
-      datum baseAddress
-      {
-         value = "80";
-         type = "String";
-      }
-   }
    element buttom.s1
    {
       datum baseAddress
@@ -169,11 +153,27 @@
          type = "String";
       }
    }
+   element sdram_ctrl.s1
+   {
+      datum baseAddress
+      {
+         value = "33554432";
+         type = "String";
+      }
+   }
    element timer.s1
    {
       datum baseAddress
       {
          value = "32";
+         type = "String";
+      }
+   }
+   element led.s1
+   {
+      datum baseAddress
+      {
+         value = "80";
          type = "String";
       }
    }
@@ -224,7 +224,7 @@
  <parameter name="projectName" value="" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1727254853750" />
+ <parameter name="timeStamp" value="1727872600520" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="reset" internal="clk_50m.clk_in_reset" type="reset" dir="end" />
@@ -661,7 +661,7 @@
   <parameter name="resetValue" value="0" />
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="9" />
+  <parameter name="width" value="27" />
   <parameter name="clockRate" value="10000000" />
  </module>
  <module

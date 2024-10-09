@@ -33,7 +33,7 @@ module NiosSoc_led (
                    )
 ;
 
-  output  [  8: 0] out_port;
+  output  [ 26: 0] out_port;
   output  [ 31: 0] readdata;
   input   [  1: 0] address;
   input            chipselect;
@@ -43,19 +43,19 @@ module NiosSoc_led (
   input   [ 31: 0] writedata;
 
   wire             clk_en;
-  reg     [  8: 0] data_out;
-  wire    [  8: 0] out_port;
-  wire    [  8: 0] read_mux_out;
+  reg     [ 26: 0] data_out;
+  wire    [ 26: 0] out_port;
+  wire    [ 26: 0] read_mux_out;
   wire    [ 31: 0] readdata;
   assign clk_en = 1;
   //s1, which is an e_avalon_slave
-  assign read_mux_out = {9 {(address == 0)}} & data_out;
+  assign read_mux_out = {27 {(address == 0)}} & data_out;
   always @(posedge clk or negedge reset_n)
     begin
       if (reset_n == 0)
           data_out <= 0;
       else if (chipselect && ~write_n && (address == 0))
-          data_out <= writedata[8 : 0];
+          data_out <= writedata[26 : 0];
     end
 
 

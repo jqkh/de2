@@ -13,7 +13,7 @@
 			sdram_wires_we_n  : out   std_logic;                                        -- we_n
 			uart0_rxd         : in    std_logic                     := 'X';             -- rxd
 			uart0_txd         : out   std_logic;                                        -- txd
-			led_export        : out   std_logic_vector(8 downto 0);                     -- export
+			led_export        : out   std_logic_vector(26 downto 0);                    -- export
 			dram_clk_clk      : out   std_logic;                                        -- clk
 			locked_export     : out   std_logic;                                        -- export
 			areset_export     : in    std_logic                     := 'X';             -- export
