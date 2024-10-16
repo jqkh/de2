@@ -1,5 +1,5 @@
 Flow report for DE2_70_TOP
-Wed Oct 02 23:41:43 2024
+Wed Oct 09 17:43:48 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Flow Summary                                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Flow Status                        ; Successful - Wed Oct 02 23:41:39 2024            ;
+; Flow Status                        ; Successful - Wed Oct 09 17:43:44 2024            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; DE2_70_TOP                                       ;
 ; Top-level Entity Name              ; DE2_70_TOP                                       ;
 ; Family                             ; Cyclone II                                       ;
 ; Device                             ; EP2C70F896C6                                     ;
 ; Timing Models                      ; Final                                            ;
-; Total logic elements               ; 6,455 / 68,416 ( 9 % )                           ;
-;     Total combinational functions  ; 5,404 / 68,416 ( 8 % )                           ;
-;     Dedicated logic registers      ; 4,297 / 68,416 ( 6 % )                           ;
-; Total registers                    ; 4366                                             ;
+; Total logic elements               ; 6,627 / 68,416 ( 10 % )                          ;
+;     Total combinational functions  ; 5,500 / 68,416 ( 8 % )                           ;
+;     Dedicated logic registers      ; 4,468 / 68,416 ( 7 % )                           ;
+; Total registers                    ; 4537                                             ;
 ; Total pins                         ; 530 / 622 ( 85 % )                               ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 69,376 / 1,152,000 ( 6 % )                       ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/02/2024 23:40:11 ;
+; Start date & time ; 10/09/2024 17:42:06 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE2_70_TOP          ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+-------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                               ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+-------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 247207018346548.172788360937380     ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 259630333977125.172846692662820     ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; 16764057                            ; --            ; --          ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING               ; --            ; --          ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; SOURCE                              ; --            ; --          ; Top        ;
@@ -89,11 +89,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:47     ; 1.0                     ; 4831 MB             ; 00:00:26                           ;
-; Fitter                    ; 00:00:30     ; 1.6                     ; 5560 MB             ; 00:00:30                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 4605 MB             ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4698 MB             ; 00:00:02                           ;
-; Total                     ; 00:01:25     ; --                      ; --                  ; 00:01:01                           ;
+; Analysis & Synthesis      ; 00:00:41     ; 1.0                     ; 4820 MB             ; 00:00:39                           ;
+; Fitter                    ; 00:00:44     ; 1.3                     ; 5241 MB             ; 00:00:52                           ;
+; Assembler                 ; 00:00:06     ; 1.0                     ; 4598 MB             ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4685 MB             ; 00:00:03                           ;
+; Total                     ; 00:01:34     ; --                      ; --                  ; 00:01:39                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -102,10 +102,10 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; DESKTOP-EFMUB4E  ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; DESKTOP-EFMUB4E  ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; DESKTOP-EFMUB4E  ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; DESKTOP-EFMUB4E  ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; LAPTOP-TD0SCC2T  ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; LAPTOP-TD0SCC2T  ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; LAPTOP-TD0SCC2T  ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; LAPTOP-TD0SCC2T  ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

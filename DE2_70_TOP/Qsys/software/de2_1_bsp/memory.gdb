@@ -3,7 +3,7 @@
 # Machine generated for CPU 'nios2cpu' in SOPC Builder design 'NiosSoc'
 # SOPC Builder design path: D:/de0/de2/DE2_70_TOP/Qsys/NiosSoc.sopcinfo
 #
-# Generated: Wed Sep 25 17:04:12 CST 2024
+# Generated: Wed Oct 09 16:37:04 CST 2024
 
 # DO NOT MODIFY THIS FILE
 #

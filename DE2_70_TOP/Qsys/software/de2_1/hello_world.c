@@ -1,24 +1,27 @@
-/*
- * "Hello World" example.
- *
- * This example prints 'Hello from Nios II' to the STDOUT stream. It runs on
- * the Nios II 'standard', 'full_featured', 'fast', and 'low_cost' example
- * designs. It runs with or without the MicroC/OS-II RTOS and requires a STDOUT
- * device in your system's hardware.
- * The memory footprint of this hosted application is ~69 kbytes by default
- * using the standard reference design.
- *
- * For a reduced footprint version of this template, and an explanation of how
- * to reduce the memory footprint for a given application, see the
- * "small_hello_world" template.
- *
- */
-
-#include <stdio.h>
-
+/* 實驗一: LED旋轉測試 */
+#include <stdio.h>  /* 系統標準輸出入函示庫 */
+#include <system.h> /* 系統函示庫 */
+#include <io.h>     /* 系統I/O函示庫*/
+#include <unistd.h> /* 宣告usleep函數 */
+int bt=0,i=1;
+long long int led=1;
 int main()
 {
-  printf("Hello from Nios II!\n");
+  printf("Hello LED test!\n");
+  while(1){
 
+	  bt=IORD(BUTTOM_BASE,0);
+	  usleep(2000);
+	  if((bt&0x02)==0)i++;
+	  if(i%2==1){
+		 if(led==0x4000000)led=0x01;
+		 led=led<<1;
+	 }else{
+		if(led==0x01)led=0x4000000;
+		led=led>>1;
+	 }
+	 IOWR(LED_BASE,0,led);
+	 usleep(50000);
+  }
   return 0;
 }

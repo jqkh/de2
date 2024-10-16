@@ -2,7 +2,7 @@ set_global_assignment -entity "NiosSoc" -library "NiosSoc" -name IP_TOOL_NAME "Q
 set_global_assignment -entity "NiosSoc" -library "NiosSoc" -name IP_TOOL_VERSION "13.0sp1"
 set_global_assignment -entity "NiosSoc" -library "NiosSoc" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "NiosSoc" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../NiosSoc.sopcinfo"]
-set_instance_assignment -entity "NiosSoc" -library "NiosSoc" -name SLD_INFO "QSYS_NAME NiosSoc HAS_SOPCINFO 1 GENERATION_ID 1727883583"
+set_instance_assignment -entity "NiosSoc" -library "NiosSoc" -name SLD_INFO "QSYS_NAME NiosSoc HAS_SOPCINFO 1 GENERATION_ID 1728466876"
 set_global_assignment -library "NiosSoc" -name MISC_FILE [file join $::quartus(qip_path) "../../NiosSoc.cmp"]
 set_global_assignment -name SYNTHESIS_ONLY_QIP ON
 set_global_assignment -library "NiosSoc" -name MISC_FILE [file join $::quartus(qip_path) "../../NiosSoc.qsys"]
@@ -50,6 +50,7 @@ set_global_assignment -library "NiosSoc" -name SYSTEMVERILOG_FILE [file join $::
 set_global_assignment -library "NiosSoc" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_agent.sv"]
 set_global_assignment -library "NiosSoc" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_slave_translator.sv"]
 set_global_assignment -library "NiosSoc" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_translator.sv"]
+set_global_assignment -library "NiosSoc" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/NiosSoc_switch.v"]
 set_global_assignment -library "NiosSoc" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/NiosSoc_buttom.v"]
 set_global_assignment -library "NiosSoc" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/NiosSoc_dma_0.v"]
 set_global_assignment -library "NiosSoc" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/NiosSoc_led.v"]
@@ -179,6 +180,9 @@ set_global_assignment -entity "altera_merlin_slave_translator" -library "NiosSoc
 set_global_assignment -entity "altera_merlin_master_translator" -library "NiosSoc" -name IP_TOOL_NAME "altera_merlin_master_translator"
 set_global_assignment -entity "altera_merlin_master_translator" -library "NiosSoc" -name IP_TOOL_VERSION "13.0"
 set_global_assignment -entity "altera_merlin_master_translator" -library "NiosSoc" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "NiosSoc_switch" -library "NiosSoc" -name IP_TOOL_NAME "altera_avalon_pio"
+set_global_assignment -entity "NiosSoc_switch" -library "NiosSoc" -name IP_TOOL_VERSION "13.0.1.99.2"
+set_global_assignment -entity "NiosSoc_switch" -library "NiosSoc" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -entity "NiosSoc_buttom" -library "NiosSoc" -name IP_TOOL_NAME "altera_avalon_pio"
 set_global_assignment -entity "NiosSoc_buttom" -library "NiosSoc" -name IP_TOOL_VERSION "13.0.1.99.2"
 set_global_assignment -entity "NiosSoc_buttom" -library "NiosSoc" -name IP_TOOL_ENV "Qsys"
