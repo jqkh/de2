@@ -986,9 +986,9 @@ module NiosSoc_nios2cpu_nios2_avalon_reg (
   always @(posedge clk or negedge reset_n)
     begin
       if (reset_n == 0)
-          oci_ienable <= 32'b00000000000000000000000000001111;
+          oci_ienable <= 32'b00000000000000000000000000011111;
       else if (take_action_oci_intr_mask_reg)
-          oci_ienable <= writedata | ~(32'b00000000000000000000000000001111);
+          oci_ienable <= writedata | ~(32'b00000000000000000000000000011111);
     end
 
 
@@ -4045,6 +4045,9 @@ module NiosSoc_nios2cpu (
   reg              A_ienable_reg_irq3;
   wire             A_ienable_reg_irq3_nxt;
   wire             A_ienable_reg_irq3_wr_en;
+  reg              A_ienable_reg_irq4;
+  wire             A_ienable_reg_irq4_nxt;
+  wire             A_ienable_reg_irq4_wr_en;
   wire    [ 55: 0] A_inst;
   reg     [ 31: 0] A_inst_result;
   wire    [ 31: 0] A_inst_result_aligned;
@@ -4061,6 +4064,9 @@ module NiosSoc_nios2cpu (
   reg              A_ipending_reg_irq3;
   wire             A_ipending_reg_irq3_nxt;
   wire             A_ipending_reg_irq3_wr_en;
+  reg              A_ipending_reg_irq4;
+  wire             A_ipending_reg_irq4_nxt;
+  wire             A_ipending_reg_irq4_wr_en;
   reg     [ 31: 0] A_iw /* synthesis ALTERA_IP_DEBUG_VISIBLE = 1 */;
   wire    [  4: 0] A_iw_a;
   wire    [  4: 0] A_iw_b;
@@ -5560,6 +5566,7 @@ module NiosSoc_nios2cpu (
   wire             M_wrctl_data_ienable_reg_irq1;
   wire             M_wrctl_data_ienable_reg_irq2;
   wire             M_wrctl_data_ienable_reg_irq3;
+  wire             M_wrctl_data_ienable_reg_irq4;
   wire             M_wrctl_data_status_reg_pie;
   wire             M_wrctl_estatus;
   wire             M_wrctl_ienable;
@@ -8737,6 +8744,7 @@ NiosSoc_nios2cpu_dc_victim_module NiosSoc_nios2cpu_dc_victim
   assign M_wrctl_data_ienable_reg_irq1 = M_alu_result[1];
   assign M_wrctl_data_ienable_reg_irq2 = M_alu_result[2];
   assign M_wrctl_data_ienable_reg_irq3 = M_alu_result[3];
+  assign M_wrctl_data_ienable_reg_irq4 = M_alu_result[4];
   assign A_status_reg_pie_nxt = M_valid           ? A_status_reg_pie_inst_nxt : 
     A_status_reg_pie;
 
@@ -8832,6 +8840,20 @@ NiosSoc_nios2cpu_dc_victim_module NiosSoc_nios2cpu_dc_victim
     end
 
 
+  assign A_ienable_reg_irq4_nxt = (M_wrctl_ienable & M_valid) ? 
+    M_wrctl_data_ienable_reg_irq4 :
+    A_ienable_reg_irq4;
+
+  assign A_ienable_reg_irq4_wr_en = A_en;
+  always @(posedge clk or negedge reset_n)
+    begin
+      if (reset_n == 0)
+          A_ienable_reg_irq4 <= 0;
+      else if (A_ienable_reg_irq4_wr_en)
+          A_ienable_reg_irq4 <= A_ienable_reg_irq4_nxt;
+    end
+
+
   assign A_ipending_reg_irq0_nxt = d_irq[0] & A_ienable_reg_irq0 & oci_ienable[0];
   assign A_ipending_reg_irq0_wr_en = 1;
   always @(posedge clk or negedge reset_n)
@@ -8876,11 +8898,22 @@ NiosSoc_nios2cpu_dc_victim_module NiosSoc_nios2cpu_dc_victim
     end
 
 
+  assign A_ipending_reg_irq4_nxt = d_irq[4] & A_ienable_reg_irq4 & oci_ienable[4];
+  assign A_ipending_reg_irq4_wr_en = 1;
+  always @(posedge clk or negedge reset_n)
+    begin
+      if (reset_n == 0)
+          A_ipending_reg_irq4 <= 0;
+      else if (A_ipending_reg_irq4_wr_en)
+          A_ipending_reg_irq4 <= A_ipending_reg_irq4_nxt;
+    end
+
+
   assign A_status_reg = { 31'd0, A_status_reg_pie };
   assign A_estatus_reg = { 31'd0, A_estatus_reg_pie };
   assign A_bstatus_reg = { 31'd0, A_bstatus_reg_pie };
-  assign A_ienable_reg = { 28'd0, A_ienable_reg_irq3, A_ienable_reg_irq2, A_ienable_reg_irq1, A_ienable_reg_irq0 };
-  assign A_ipending_reg = { 28'd0, A_ipending_reg_irq3, A_ipending_reg_irq2, A_ipending_reg_irq1, A_ipending_reg_irq0 };
+  assign A_ienable_reg = { 27'd0, A_ienable_reg_irq4, A_ienable_reg_irq3, A_ienable_reg_irq2, A_ienable_reg_irq1, A_ienable_reg_irq0 };
+  assign A_ipending_reg = { 27'd0, A_ipending_reg_irq4, A_ipending_reg_irq3, A_ipending_reg_irq2, A_ipending_reg_irq1, A_ipending_reg_irq0 };
   assign A_cpuid_reg = { 31'd0, 1'd0 };
   assign D_control_reg_rddata_muxed = (D_iw_control_regnum == 3'd0)? A_status_reg :
     (D_iw_control_regnum == 3'd1)? A_estatus_reg :

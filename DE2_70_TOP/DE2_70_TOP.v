@@ -408,15 +408,18 @@ inout			GPIO_CLKOUT_P1;         //	GPIO Connection 1 Clock Output 1
 // REG/WIRE declarations
 //=============================================================================
 
-
-
+wire [3:0]hexdecode_0;
+wire [3:0]hexdecode_1;
+wire [3:0]hexdecode_2;
+wire [3:0]hexdecode_3;
 //=============================================================================
 // Structural coding
 //=============================================================================
     //=======================================================
 //  Structural coding
 //=======================================================
- 
+
+				
 NiosSoc u0 (
         .clk_50m_clk       (iCLK_50),           //     clk_50m.clk
         .reset_reset_n     (iKEY[0]),           //       reset.reset_n
@@ -446,10 +449,24 @@ NiosSoc u0 (
         .led_export        ({oLEDR,oLEDG}),             //         led.export
 		  /*Buttom*/
 		  .buttom_export(iKEY[3:0]),
-		  .switch_export(iSW[17:0])
+		  .switch_export(iSW[17:0]),
+		  .hex0_export       (hexdecode_0),       
+        .hex1_export       (hexdecode_1),       
+        .hex2_export       (hexdecode_2),       
+        .hex3_export       (hexdecode_3)        
     );
+DEC_7SEG a0( .iHex_digit(hexdecode_0), /* switch input */
+              .oHEX( {HEX0_DP, HEX0_D}) /* connect to 7-seg signals*/
+            );
+DEC_7SEG a1( .iHex_digit(hexdecode_1), /* switch input */
+              .oHEX( {HEX1_DP, HEX1_D}) /* connect to 7-seg signals*/
+            );
 
-
-
+DEC_7SEG a2( .iHex_digit(hexdecode_2), /* switch input */
+              .oHEX( {HEX2_DP, HEX2_D}) /* connect to 7-seg signals*/
+            );
+DEC_7SEG a3( .iHex_digit(hexdecode_3), /* switch input */
+              .oHEX( {HEX3_DP, HEX3_D}) /* connect to 7-seg signals*/
+            );
 endmodule
 

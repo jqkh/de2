@@ -541,9 +541,9 @@ endmodule
 
 //DMA peripheral NiosSoc_dma_0
 //Read slaves:
-//timer.s1,uart0.s1,switch.s1,led.s1,sdram_ctrl.s1,jtag_uart.avalon_jtag_slave,buttom.s1; 
+//timer.s1,hex1.s1,led.s1,hex0.s1,sdram_ctrl.s1,hex3.s1,jtag_uart.avalon_jtag_slave,buttom.s1,uart0.s1,hex2.s1,switch.s1; 
 //Write slaves:
-//timer.s1,uart0.s1,switch.s1,led.s1,sdram_ctrl.s1,jtag_uart.avalon_jtag_slave,buttom.s1; 
+//timer.s1,hex1.s1,led.s1,hex0.s1,sdram_ctrl.s1,hex3.s1,jtag_uart.avalon_jtag_slave,buttom.s1,uart0.s1,hex2.s1,switch.s1; 
 
 
 module NiosSoc_dma_0 (
