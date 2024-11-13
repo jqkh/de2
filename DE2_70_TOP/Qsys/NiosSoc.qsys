@@ -149,7 +149,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -169,6 +169,22 @@
          type = "String";
       }
    }
+   element timer.s1
+   {
+      datum baseAddress
+      {
+         value = "32";
+         type = "String";
+      }
+   }
+   element hex3.s1
+   {
+      datum baseAddress
+      {
+         value = "64";
+         type = "String";
+      }
+   }
    element hex0.s1
    {
       datum baseAddress
@@ -185,27 +201,19 @@
          type = "String";
       }
    }
-   element hex2.s1
-   {
-      datum baseAddress
-      {
-         value = "80";
-         type = "String";
-      }
-   }
-   element hex1.s1
-   {
-      datum baseAddress
-      {
-         value = "96";
-         type = "String";
-      }
-   }
    element uart0.s1
    {
       datum baseAddress
       {
          value = "0";
+         type = "String";
+      }
+   }
+   element hex2.s1
+   {
+      datum baseAddress
+      {
+         value = "80";
          type = "String";
       }
    }
@@ -225,11 +233,11 @@
          type = "String";
       }
    }
-   element hex3.s1
+   element hex1.s1
    {
       datum baseAddress
       {
-         value = "64";
+         value = "96";
          type = "String";
       }
    }
@@ -238,14 +246,6 @@
       datum baseAddress
       {
          value = "160";
-         type = "String";
-      }
-   }
-   element timer.s1
-   {
-      datum baseAddress
-      {
-         value = "32";
          type = "String";
       }
    }
@@ -304,7 +304,7 @@
  <parameter name="projectName" value="" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1729667004794" />
+ <parameter name="timeStamp" value="1731431597491" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="reset" internal="clk_50m.clk_in_reset" type="reset" dir="end" />
@@ -844,7 +844,7 @@
   <parameter name="resetValue" value="0" />
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="4" />
+  <parameter name="width" value="8" />
   <parameter name="clockRate" value="10000000" />
  </module>
  <module
@@ -862,7 +862,7 @@
   <parameter name="resetValue" value="0" />
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="4" />
+  <parameter name="width" value="8" />
   <parameter name="clockRate" value="10000000" />
  </module>
  <module
@@ -880,7 +880,7 @@
   <parameter name="resetValue" value="0" />
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="4" />
+  <parameter name="width" value="8" />
   <parameter name="clockRate" value="10000000" />
  </module>
  <module
@@ -898,7 +898,7 @@
   <parameter name="resetValue" value="0" />
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="4" />
+  <parameter name="width" value="8" />
   <parameter name="clockRate" value="10000000" />
  </module>
  <connection
